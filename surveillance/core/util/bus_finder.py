@@ -54,5 +54,5 @@ class BusFinder(object):
         self.wait_for_dbus_address_to_be_written_to_file()
 
 
-#busfinder = BusFinder()
-#print busfinder.get_address()
+busfinder = BusFinder()
+print busfinder.get_address()
