@@ -60,7 +60,7 @@ def worker(name,url,omxplayer_extra_options,coordinates,stopworker):
     proc=start_subprocess(url,coordinates)
     logger.debug("stopworker.value = " + name + " " + str(stopworker.value))
     while attempts < 100000 and stopworker.value == False:
-        #logger.debug("stopworker.value in loop = " + name + " " + str(stopworker.value))
+        logger.debug("stopworker.value in loop = " + name + " " + str(stopworker.value))
         if proc.poll() != None:
             proc.communicate(input="\n")
             proc=start_subprocess(url,coordinates)
