@@ -90,7 +90,7 @@ def handle_keypresses():
         # This can do not harm, but is not really needed in this case, since the screen was already updated in cache and we merely swap it on screen as is.
         # We do not check update_connectable_cameras this time as this is to slow for the user to wait for and we live with the fact if there is one unavailable or one became available since cache time,
         # it is not updated until next regular update of the screen
-        # logger.debug("MAIN: after keyboard next_event start update_active_screen with skip_update_connectable_camera true")
+         logger.debug("MAIN: after keyboard next_event start update_active_screen with skip_update_connectable_camera true")
         # screen_manager_main.update_active_screen(skip_update_connectable_camera = True)
     if event == "end_event":
         logger.debug("Main:  quit_on_keyboard event detected")
