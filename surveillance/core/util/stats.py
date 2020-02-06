@@ -64,12 +64,12 @@ def send_stats(version, uniqid, runtime):
         ('Cache-Control', 'no-cache')
     ]
     #Extra info will be send via cookie headers
-    #opener.addheaders.append(('Cookie', 'runtime='+ runtime + ';reservedkey=reservedvalue'))
+    opener.addheaders.append(('Cookie', 'runtime='+ runtime + ';reservedkey=reservedvalue'))
     opener.addheaders.append(('Cookie', 'runtime='+ runtime + ';version='+ str(version)  ))
 
     urllib2.install_opener(opener)
 
-    #f = opener.open("http://httpbin.org/cookies")
+    f = opener.open("http://httpbin.org/cookies")
     logger_send_stats.debug("Start sending uniqid " + uniqid + ", runtime " + runtime + ", version " + str(version) + " to " + destination + " for updating stats rpisurv community")
     try:
         response = opener.open(destination, timeout=20)
