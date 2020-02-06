@@ -191,7 +191,7 @@ class CameraStream:
             # This is an imageurl instead of a camerastream, do not start omxplayer stuff
             if self.is_connectable():
                 try:
-                    # image_str = urllib2.urlopen(self.url).read()
+                     image_str = urllib2.urlopen(self.url).read()
                     image_str = self._urllib2open_wrapper().read()
                     # create a file object (stream)
                     self.image_file = io.BytesIO(image_str)
